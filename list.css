@@ -222,6 +222,7 @@ p{
     width: 1rem;
     color: #2e2e2e;
     opacity: 0;
+    transition: all 0.3s;
 }
 .task2:hover .checkmark svg{
     opacity: 1;
@@ -229,6 +230,104 @@ p{
 .task2:hover .checkmark svg path {
     stroke-width: 3;
 }
+.task2 input:checked~.checkmark {
+    background-color: #2e2e2e;
+}
+.task2 input:checked~.checkmark svg {
+    opacity: 1;
+    color: #fff;
+}
+
+.task2 input:checked~p {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task2-container .delete {
+    width: 2rem;
+    height: 2rem;
+    color: #2e2e2e;
+    background-color: rgba(0, 0, 0, 0.031);
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.task2-container:hover .delete {
+    visibility: visible;
+    opacity: 1;
+}
+
+.task2-container .delete:hover {
+    color: red;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* add task */
+.add-task-btn {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: pink;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.add-task-btn:hover {
+    transform: scale(1.1);
+}
+.add-task-btn svg {
+    width: 2rem;
+    color: #2e2e2e;
+}
+
+.task-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 2rem;
+}
+
+.task-form  .heading {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.input-group input,
+.input-group label {
+    display: block;
+    width: 100%;
+}
+.input-group input,
+.input-group select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+.input-group label {
+    width: max-content;
+    margin-top: 5px;
+    padding: 0 5px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+
+
+
+
 @media only screen and (min-width: 420px){
     .container {
         height: 45rem;

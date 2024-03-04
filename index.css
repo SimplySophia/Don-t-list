@@ -178,12 +178,17 @@ p{
     opacity: 0.6;
 }
 /* task */
-.task-container{
+.tasks-container{
     padding: 0 2rem;
     margin-top: 1rem;
     height: calc(100% - 12rem);
     padding-bottom: 2rem;
     overflow: hidden;
+}
+.no-task {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.6;
 }
 .tasks{
     display: flex;
@@ -192,24 +197,25 @@ p{
     padding-top: 1rem;
     
 }
-.task2-container{
+.task-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.task2{
+.task{
     display: flex;
     gap: 0.5rem;
-    margin-top: -rem;
+    margin-top: -1rem;
     align-items: center;
     width: max-content;
     font-weight: 500;
+    font-size: 0.865rem;
     cursor: pointer;
 }
-.task2 input{
+.task input{
     display: none;
 }
-.task2 .checkmark{
+.task .checkmark{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,50 +224,51 @@ p{
     border-radius: 2px;
     border: 1px solid #2e2e2e;
 }
-.task2 .checkmark svg{
+.task .checkmark svg{
     width: 1rem;
     color: #2e2e2e;
     opacity: 0;
     transition: all 0.3s;
 }
-.task2:hover .checkmark svg{
+.task:hover .checkmark svg{
     opacity: 1;
 }
-.task2:hover .checkmark svg path {
+.task:hover .checkmark svg path {
     stroke-width: 3;
 }
-.task2 input:checked~.checkmark {
+.task input:checked~.checkmark {
     background-color: #2e2e2e;
 }
-.task2 input:checked~.checkmark svg {
+.task input:checked~.checkmark svg {
     opacity: 1;
     color: #fff;
 }
 
-.task2 input:checked~p {
+.task input:checked~p {
     text-decoration: line-through;
     opacity: 0.6;
 }
 
-.task2-container .delete {
+.task-container .delete {
     width: 2rem;
     height: 2rem;
     color: #2e2e2e;
     background-color: rgba(0, 0, 0, 0.031);
     border-radius: 50%;
     padding: 0.5rem;
+    margin-top: -0.5rem;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
 }
 
-.task2-container:hover .delete {
+.task-container:hover .delete {
     visibility: visible;
     opacity: 1;
 }
 
-.task2-container .delete:hover {
+.task-container .delete:hover {
     color: red;
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -269,7 +276,7 @@ p{
 /* add task */
 .add-task-btn {
     position: absolute;
-    bottom: 0;
+    bottom: 0%;
     right: 1rem;
     width: 3rem;
     height: 3rem;
@@ -280,6 +287,11 @@ p{
     align-items: center;
     cursor: pointer;
     transition: all .3s;
+}
+.add-task-btn.active{
+    z-index: 1;
+    bottom: 20rem;
+    transform: rotate(45deg);
 }
 
 .add-task-btn:hover {
@@ -292,10 +304,14 @@ p{
 
 .task-form {
     position: absolute;
-    bottom: 0;
+    bottom: 100%;
     left: 0;
     width: 100%;
     padding: 0.5rem 2rem;
+    transition: all .3s;
+}
+.task-form.active{
+    bottom: 0;
 }
 
 .task-form  .heading {
@@ -323,6 +339,51 @@ p{
     margin-bottom: 5px;
     color: #666;
 }
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn button {
+    padding: 0.5rem 0.8rem;
+    margin: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.143rem;
+    font-weight: 400;
+    z-index: 2;
+}
+.btn button.add-btn {
+    background-color: #f9ea85;
+    color: #2e2e2e;
+}
+/*.task-backdrop {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 135%;
+    height: 20rem;
+    border-radius: 50% 50% 0 0;
+}*/
+.left-backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: #00000023;
+    opacity: 0;
+    visibility: hidden;
+}
+.left-backdrop.active{
+    opacity: 1;
+    visibility: visible;
+}
 
 
 
@@ -330,8 +391,8 @@ p{
 
 @media only screen and (min-width: 420px){
     .container {
-        height: 45rem;
-        width: 22.5rem;
+        height: 43rem;
+        width: 22rem;
         border-radius: 40px;
         border: 5px solid hsl(0, 0%, 18%);
         overflow: auto;

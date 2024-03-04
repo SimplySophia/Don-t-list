@@ -26,7 +26,7 @@ leftBackdrop.addEventListener('click', toggleAddTaskForm);
 let categories = [
     {
         title: "Personal",
-        img: "images(42).jpeg"
+        img: "personal .jpg"
     },
     {
         title: "Coding",

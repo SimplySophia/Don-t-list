@@ -47,8 +47,8 @@ p{
     position: absolute;
     top: 0;
     left: 50%;
-    width: 100%;
-    height: 25rem;
+    width: 105%;
+    height: 24rem;
     background-color: pink;
     border-radius: 0 0 45% 45%;
     transform: translateX(-50%);
@@ -95,7 +95,7 @@ p{
     height: calc(100% - 8rem);
     padding: 0 2rem;
     padding-bottom: 0.5rem;
-    overflow: hidden;
+    overflow: auto;
     z-index: -1;
 }
 .categories{
@@ -361,15 +361,6 @@ p{
     background-color: #f9ea85;
     color: #2e2e2e;
 }
-/*.task-backdrop {
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 135%;
-    height: 20rem;
-    border-radius: 50% 50% 0 0;
-}*/
 .left-backdrop{
     position: absolute;
     top: 0;
@@ -392,8 +383,8 @@ p{
 
 @media only screen and (min-width: 420px){
     .container {
-        height: 43rem;
-        width: 22rem;
+        height: 42rem;
+        width: 21rem;
         border-radius: 40px;
         border: 5px solid hsl(0, 0%, 18%);
         overflow: auto;

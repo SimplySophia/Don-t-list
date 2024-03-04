@@ -28,7 +28,7 @@ p{
 }
 .container{
     position: relative;
-    height: 100vh;
+    height: 10%;
     width: 100%;
     overflow: hidden;
     padding: 2rem 0;
@@ -92,7 +92,7 @@ p{
 }
 .categories-container{
     margin-top: 1rem;
-    height: calc(100% - 8rem);
+    height: calc(100% - 12rem);
     padding: 0 2rem;
     padding-bottom: 0.5rem;
     overflow: auto;
@@ -127,7 +127,7 @@ p{
     width: 4rem;
 }
 .category .right h1{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .category .right p{
     opacity: 0.6;
@@ -383,8 +383,8 @@ p{
 
 @media only screen and (min-width: 420px){
     .container {
-        height: 42rem;
-        width: 21rem;
+        height: 41rem;
+        width: 20rem;
         border-radius: 40px;
         border: 5px solid hsl(0, 0%, 18%);
         overflow: auto;

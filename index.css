@@ -8,6 +8,7 @@
 }
 ::-webkit-scrollbar{
     width: 0;
+    overflow: hidden;
 }
 body{
     display: flex;
@@ -94,7 +95,7 @@ p{
     height: calc(100% - 8rem);
     padding: 0 2rem;
     padding-bottom: 0.5rem;
-    overflow: auto;
+    overflow: hidden;
     z-index: -1;
 }
 .categories{

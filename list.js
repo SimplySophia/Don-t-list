@@ -17,8 +17,18 @@ const leftBackdrop = document.querySelector(".left-backdrop");
 const toggleAddTaskForm = () => {
     addTaskForm.classList.toggle("active");
     leftBackdrop.classList.toggle("active");
-    addTaskBtn.classList.toggle('active')
-}
+    addTaskBtn.classList.toggle('active');
+
+    //add the blur effect and fallback background color
+    if (leftBackdrop.classList.contains) {
+        container.classList.add("blur-effect");
+        leftBackdrop.classList.add("blur-effect");
+    } else {
+        container.classList.remove("blur-effect");
+        leftBackdrop.classList.remove("blur-effect");
+    }
+
+};
 addTaskBtn.addEventListener('click', toggleAddTaskForm);
 leftBackdrop.addEventListener('click', toggleAddTaskForm);
 
@@ -274,6 +284,30 @@ const renderTasks = () => {
             <p>${task.task}</p>
             `;
 
+            //function setBackgroundColor with fallback
+            /*function setBackgroundColor(leftBackdrop, color, fallback) {
+                const element = document.getElementById(leftBackdrop);
+
+                //try to set the desired color
+                element.style.backgroundColor = color;
+
+                // check if the desired color was successfully set
+                const computedColor = window.getComputedStyle(element).backgroundColor;
+
+                // if the computed color is the same as the desired color, it was set successfully
+                if (computedColor === color){
+                    console.log('Background color set successfully: ' + color);
+                } else {
+                    //if the desired color was not set, apply the fallback color
+                    element.style.backgroundColor = fallbackColor;
+                    console.log('could not set background color, using fallback: ' + fallbackColor);
+                }
+            }
+            // function to handle the click event
+            function leftBackdrop () {
+                setBackgroundColor('leftBackdrop', '00000023');
+            }*/
+
             label.prepend(checkBox);
             div.prepend(label);
             tasksContainer.appendChild(div);
@@ -336,6 +370,7 @@ addBtn.addEventListener("click", () => {
         toggleAddTaskForm();
         renderTasks();
     }
+
 });
 
 categories.forEach((category) => {

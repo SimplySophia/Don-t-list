@@ -20,7 +20,7 @@ const toggleAddTaskForm = () => {
     addTaskBtn.classList.toggle('active');
 
     //add the blur effect and fallback background color
-    if (leftBackdrop.classList.contains) {
+    if (leftBackdrop.classList.contains("active")) {
         container.classList.add("blur-effect");
         leftBackdrop.classList.add("blur-effect");
     } else {

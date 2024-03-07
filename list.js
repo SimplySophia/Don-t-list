@@ -23,9 +23,13 @@ const toggleAddTaskForm = () => {
     if (leftBackdrop.classList.contains("active")) {
         container.classList.add("blur-effect");
         leftBackdrop.classList.add("blur-effect");
+        leftBackdrop.style.backgroundColor = "#00000023";
+        leftBackdrop.style.backdropFilter = "blur(5px)";
     } else {
         container.classList.remove("blur-effect");
         leftBackdrop.classList.remove("blur-effect");
+        leftBackdrop.style.backgroundColor = ""; // Reset to default
+        leftBackdrop.style.backdropFilter = ""; // Reset to default
     }
 
 };
@@ -283,30 +287,6 @@ const renderTasks = () => {
             </span>
             <p>${task.task}</p>
             `;
-
-            //function setBackgroundColor with fallback
-            /*function setBackgroundColor(leftBackdrop, color, fallback) {
-                const element = document.getElementById(leftBackdrop);
-
-                //try to set the desired color
-                element.style.backgroundColor = color;
-
-                // check if the desired color was successfully set
-                const computedColor = window.getComputedStyle(element).backgroundColor;
-
-                // if the computed color is the same as the desired color, it was set successfully
-                if (computedColor === color){
-                    console.log('Background color set successfully: ' + color);
-                } else {
-                    //if the desired color was not set, apply the fallback color
-                    element.style.backgroundColor = fallbackColor;
-                    console.log('could not set background color, using fallback: ' + fallbackColor);
-                }
-            }
-            // function to handle the click event
-            function leftBackdrop () {
-                setBackgroundColor('leftBackdrop', '00000023');
-            }*/
 
             label.prepend(checkBox);
             div.prepend(label);

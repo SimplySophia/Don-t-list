@@ -23,7 +23,7 @@ const toggleAddTaskForm = () => {
     if (leftBackdrop.classList.contains("active")) {
         container.classList.add("blur-effect");
         leftBackdrop.classList.add("blur-effect");
-        leftBackdrop.style.backgroundColor = "#00000023";
+        leftBackdrop.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         leftBackdrop.style.backdropFilter = "blur(5px)";
     } else {
         container.classList.remove("blur-effect");
